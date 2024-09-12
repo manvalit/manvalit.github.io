@@ -157,10 +157,59 @@ main {
 }
 
 
-/* Адаптивность для мобильных устройств */
+/* Базовые стили для десктопа */
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    max-width: 150px;
+}
+
+.header h1 {
+    font-size: 2em;
+    text-align: right;
+}
+
+/* Адаптивность для планшетов */
+@media (max-width: 1024px) {
+    .header-content {
+        flex-direction: row; /* Логотип и заголовок будут располагаться рядом */
+        justify-content: space-around; /* Центрируем элементы */
+    }
+
+    .header h1 {
+        font-size: 1.8em;
+        text-align: center; /* Центрируем текст на планшетах */
+    }
+
+    .logo {
+        max-width: 120px;
+    }
+
+    .calculator {
+        padding: 20px;
+    }
+}
+
+/* Адаптивность для мобильных устройств (смартфоны) */
 @media (max-width: 600px) {
+    .header-content {
+        flex-direction: column; /* Логотип и заголовок располагаются вертикально */
+        align-items: center;
+    }
+
     .header h1 {
         font-size: 1.5em;
+        margin-top: 10px;
+        text-align: center;
+    }
+
+    .logo {
+        max-width: 100px; /* Уменьшаем размер логотипа для мобильных */
+        margin-bottom: 10px;
     }
 
     .calculator {
@@ -169,5 +218,26 @@ main {
 
     .calculator button {
         font-size: 1em;
+    }
+}
+
+/* Адаптивность для больших экранов (ширина более 1440px) */
+@media (min-width: 1440px) {
+    .header h1 {
+        font-size: 2.5em; /* Увеличиваем размер текста для больших экранов */
+    }
+
+    .logo {
+        max-width: 200px; /* Увеличиваем логотип для больших экранов */
+    }
+
+    .calculator {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 30px;
+    }
+
+    .calculator button {
+        font-size: 1.2em;
     }
 }
