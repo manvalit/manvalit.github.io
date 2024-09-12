@@ -1,0 +1,173 @@
+/* Общие стили */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Заголовок */
+.header {
+    background-color: #0E191F;
+    padding: 20px 0;
+    color: white;
+}
+
+.header-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.logo {
+    height: 80px; /* Увеличили логотип */
+    position: absolute;
+    left: 0;
+}
+
+.header h1 {
+    font-size: 1.8em;
+    margin: 0;
+    text-align: center;
+}
+
+/* Основной блок с калькулятором */
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 80vh;
+}
+
+.calculator {
+    background-color: #fff; /* Вернули цвет блока к белому */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+}
+
+.calculator label {
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+.calculator input,
+.calculator select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box; /* Добавляем box-sizing, чтобы поля корректно отображались */
+}
+
+.calculator button {
+    width: 100%;
+    background-color: #709E25; /* Изменили цвет кнопки "Рассчитать" */
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
+.calculator button:hover {
+    background-color: #577b1b;
+}
+
+/* Результат */
+.result {
+    background-color: #fff;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr auto; /* Добавляем две колонки */
+    row-gap: 10px; /* Отступ между строками */
+    align-items: center;
+}
+
+.result .text {
+    text-align: left; /* Текст по левому краю */
+}
+
+.result .value {
+    text-align: right; /* Числовое значение по правому краю */
+    font-weight: bold; /* Числовые значения выделены жирным */
+}
+
+.copy-btn {
+    background-color: #0967B1; /* Изменили цвет кнопки "Скопировать" */
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 10px;
+    width: 100%;
+    max-width: 500px;
+}
+
+.copy-btn:hover {
+    background-color: #074d85;
+}
+
+/* Футер */
+.footer {
+    background-color: #0E191F;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.footer p {
+    margin: 0;
+}
+
+.inline-fields {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.field-group {
+    flex: 1;
+}
+
+.small-text {
+    font-size:11px; /* Изменяем размер шрифта */
+    color: #555;     /* Дополнительно можно изменить цвет, если нужно */
+}
+
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 600px) {
+    .header h1 {
+        font-size: 1.5em;
+    }
+
+    .calculator {
+        padding: 15px;
+    }
+
+    .calculator button {
+        font-size: 1em;
+    }
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор арболитовых блоков</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container header-content">
+            <img src="logo.png" alt="Логотип" class="logo">
+            <h1>Онлайн расчет арболитовых блоков</h1>
+        </div>
+    </header>
+
+    <main class="container">
+        <form id="calculator" class="calculator">
+            <label for="blockSize">Размер блока (мм):</label><br>
+            <small class="small-text">(Длина × Высота × Толщина)</small> <!-- Добавили класс для текста -->
+            <select id="blockSize" required>
+                <option value="500x200x400" selected>500x200x400</option> <!-- Значение по умолчанию -->
+                <option value="500x200x350">500x200x350</option>
+                <option value="500x200x300">500x200x300</option>
+                <option value="500x250x400">500x250x400</option>
+                <option value="500x250x350">500x250x350</option>
+                <option value="500x250x300">500x250x300</option>
+                <option value="500x250x200">500x250x200</option>
+                <option value="500x250x150">500x250x150</option>
+                <option value="500x250x100">500x250x100</option>
+            </select>
+
+            <!-- Длина и ширина на одной строке -->
+            <div class="inline-fields">
+                <div class="field-group">
+                    <label for="length">Длина строения (м):</label>
+                    <input type="number" id="length" placeholder="10" required>
+                </div>
+                <div class="field-group">
+                    <label for="width">Ширина строения (м):</label>
+                    <input type="number" id="width" placeholder="10" required>
+                </div>
+            </div>
+
+            <!-- Высота стен и фронтонов на одной строке -->
+            <div class="inline-fields">
+                <div class="field-group">
+                    <label for="height">Высота стен (см):</label>
+                    <input type="number" id="height" placeholder="250" required>
+                </div>
+                <div class="field-group">
+                    <label for="frontons">Высота фронтонов (см):</label>
+                    <input type="number" id="frontons" placeholder="250" required>
+                </div>
+            </div>
+
+            <!-- Количество окон и дверей последним полем -->
+            <label for="windowsDoors">Количество окон и дверей:</label>
+            <input type="number" id="windowsDoors" placeholder="10" required>
+
+            <button type="button" onclick="calculate()">Рассчитать</button>
+        </form>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Калькулятор арболитовых блоков</p>
+        </div>
+    </footer>
+
+    <script src="config.js"></script> <!-- Подключаем файл конфигурации -->
+    <script src="script.js"></script> <!-- Основной скрипт -->
+</body>
+</html>
